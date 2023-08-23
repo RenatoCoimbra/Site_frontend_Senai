@@ -1,2 +1,4 @@
 # Site_frontend_Senai
-Site modelo do curso frontend Senai.
+Site teste/exercício, do curso frontend Senai.
+
+
