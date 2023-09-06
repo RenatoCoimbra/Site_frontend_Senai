@@ -1,9 +1,18 @@
 import navComponente from './nav.js'
 import banner from './banner.js'
+import Card from './cards.js'
+import paginas from './paginas'
+
+let pag = new paginas()
+
+function mainpage (){
+
 
 let menus = ['Home', 'Produtos', 'Contato']
-
 let nav = new navComponente()
+let CardProduto = new Card()
+
+let nav2 = new navComponente()
 nav.criarNovoMenu('barra_01', menus)
 nav.criarBarraNavUsuario('barra_01', 'Home')
 
@@ -14,12 +23,19 @@ b.modificaBanner('banner_1', bannerInfo, 0)
 
 
 let bannerIndex = 0
-setInterval(() => {
-    if (bannerIndex >= 3) {
-        bannerIndex = 0
+let bannerTime = setInterval(() => {
+    try {
+
+        if (bannerIndex >= 3) {
+            bannerIndex = 0
+        }
+        b.modificaBanner('banner_1', bannerInfo, bannerIndex)
+        bannerIndex += 1
     }
-    b.modificaBanner('banner_1', bannerInfo, bannerIndex)
-    bannerIndex += 1
+    catch{
+        console.log('banner foi paradoo por algum erro!')
+        clearInterval(bannerTime)
+    }
 }, 3000)
 
 document.getElementById('btBannerProximo').addEventListener('click', () => {
@@ -39,4 +55,30 @@ document.getElementById('btBannerAnterior').addEventListener('click', () => {
     }
     b.modificaBanner('banner_1', bannerInfo, bannerIndex)
 })
-b.modificaBanner('banner_1', bannerInfo, bannerIndex)
+
+
+CardProduto.EscolherTipo("card sb")
+CardProduto.CriarCards("PortaCard1", "Tênis da adidas", "é um tênis de alta performance")
+CardProduto.CriarCards("PortaCard1", "Tênis da adidas", "é um tênis de alta performance")
+
+let CardVenda = new Card()
+CardVenda.EscolherTipo("cardProduto sb")
+CardVenda.CriarCards("PortaCard1", "Produto a venda", "Venda do produto")
+
+}
+
+mainpage()
+
+function produtosPage() {
+    let pagina = document.getElementById('pagina')
+    pagina.innerHTML = ''
+    document.getElementsByClassName('localNav')[0].getElementsByTagName('li')[0].getElementsByTagName('a')[0]
+    
+    homeMenu.addEventListener('click',()=>{
+        window.location.reload()
+    })
+
+    let produtoMenu = document.getElementById('menu_02').getElementsByTagName('li')[1].getElementsByTagName('a')[0]
+    produtoMenu.addEventListener('click', produtosPage)
+
+}

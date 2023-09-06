@@ -108,4 +108,112 @@
         margin-left: 92%;
     }
 
+    .CardsElementos{
+        background-color: #CCCC;
+        margin-left: 10vh;
+        margin-top: 2vh;
+        height: 40vh;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card{
+        transition: all 2s;
+        height: 30vh;
+        width: 20vh;
+        background-color: #f0f0f0cc;
+        padding: 2vh;
+        margin-top: 2vh;
+        margin-left: 2vh;
+        border-radius: 2vh;
+        
+    }
+
+    .sb{
+        box-shadow: 0.4vh 0.5vh #29292944;
+    }
+
+    .card h1{
+        font-size: 3vh;
+        color: #86bcfa;
+        font-family: Arial;
+    }
+
+    .card h4{
+        color: #9e9e9e;
+    }
     
+    .card:hover{
+        transition: all 2s;
+        transform: scale(1.2);
+        background-color: rgb(61, 61, 61);
+    }
+    
+    .cardProduto{
+        transition: all 1s;
+        height: 30vh;
+        width: 20vh;
+        background-color: darkcyan;
+        padding: 2vh;
+        margin-top: 2vh;
+        margin-left: 2vh;
+        color: white;
+        border-radius: 2vh;
+    }
+    
+    .cardProduto:hover{
+        transition: all 2s;
+        transform: scale(1.2);
+        background-color: rgb(112, 6, 6);
+    }
+
+
+    footer{
+        width: 100%;
+        height: 8vh;
+        background-color: black;
+        color: cornsilk;
+        margin-top: 5vh;
+    }
+
+    footer h4{
+        width: 100%;
+        text-align: center;
+        padding: 2vh;
+        padding-top: 3vh;
+    }
+
+    .socialMedia{
+        position: absolute;
+        float: left;
+    }
+    
+    .socialMedia ul{
+        position: absolute;
+        margin-top: 1.3vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .socialMedia ul li{
+        float: left;
+        margin-left: 5vh;
+        list-style: none;
+    }
+
+    .socialMedia ul li a img{
+        width: 5vh;
+        border: cornsilk solid 3px;
+        border-radius: 1vh;
+
+    }
+
+    VitrineProdutos{
+        background-color: cornsilk;
+        height: 40vh;
+        width: 140vh;
+        display: flex;
+        margin-top: 4vh;
+        margin-left: 20vh;
+    }
