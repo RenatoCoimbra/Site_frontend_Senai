@@ -10,4 +10,4 @@ class Card{
     }
 }
 
-export default card
+export default Card

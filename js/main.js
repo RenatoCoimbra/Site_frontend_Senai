@@ -1,25 +1,25 @@
 import navComponente from './nav.js'
 import banner from './banner.js'
 import Card from './cards.js'
-import paginas from './paginas'
+import paginas from './paginas.js'
 
 let pag = new paginas()
 
-function mainpage (){
+function mainPage (){
 
 
 let menus = ['Home', 'Produtos', 'Contato']
 let nav = new navComponente()
 let CardProduto = new Card()
 
-let nav2 = new navComponente()
+
 nav.criarNovoMenu('barra_01', menus)
 nav.criarBarraNavUsuario('barra_01', 'Home')
 
 let b = new banner()
 let bannerInfo = ['<h1>Compra rapida</h1></br><h3>Compre roupa mais rapido</h3>', '<h1>Roupas da moda</h1></br><h3>Compre roupa mais rapido</h3>', '<h1>Melhores ofertas</h1></br><h3>Compre roupa mais rapido</h3>']
 b.criarBanner('banner_1')
-b.modificaBanner('banner_1', bannerInfo, 0)
+b.modificaBanner('banner_1', bannerInfo, 2)
 
 
 let bannerIndex = 0
@@ -58,8 +58,8 @@ document.getElementById('btBannerAnterior').addEventListener('click', () => {
 
 
 CardProduto.EscolherTipo("card sb")
-CardProduto.CriarCards("PortaCard1", "Tênis da adidas", "é um tênis de alta performance")
-CardProduto.CriarCards("PortaCard1", "Tênis da adidas", "é um tênis de alta performance")
+CardProduto.CriarCards("PortaCard1", "Tênis Adidas", "é um tênis de alta performance")
+CardProduto.CriarCards("PortaCard1", "Tênis Nike", "é um tênis de alta performance")
 
 let CardVenda = new Card()
 CardVenda.EscolherTipo("cardProduto sb")
@@ -67,18 +67,18 @@ CardVenda.CriarCards("PortaCard1", "Produto a venda", "Venda do produto")
 
 }
 
-mainpage()
+mainPage()
 
 function produtosPage() {
     let pagina = document.getElementById('pagina')
     pagina.innerHTML = ''
-    document.getElementsByClassName('localNav')[0].getElementsByTagName('li')[0].getElementsByTagName('a')[0]
-    
-    homeMenu.addEventListener('click',()=>{
-        window.location.reload()
-    })
-
-    let produtoMenu = document.getElementById('menu_02').getElementsByTagName('li')[1].getElementsByTagName('a')[0]
-    produtoMenu.addEventListener('click', produtosPage)
-
+    document.getElementsByClassName("localNav")[0].getElementsByTagName("h4")[0].innerHTML = "Produtos"
+    pag.PaginaDeProduto()
 }
+let HomeMenu = document.getElementById("menu_02").getElementsByTagName("li")[0].getElementsByTagName("a")[0]
+HomeMenu.addEventListener("click",()=>{
+    window.location.reload()
+})
+
+let ProdutoMenu = document.getElementById("menu_02").getElementsByTagName("li")[1].getElementsByTagName("a")[0]
+ProdutoMenu.addEventListener("click",produtosPage)

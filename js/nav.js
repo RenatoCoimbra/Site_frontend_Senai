@@ -3,8 +3,8 @@ class navComponente {
         let menuEscolhido = document.getElementById(idDoMenu)
         menuEscolhido.innerHTML += '<ul id = "menu_02"></ul>'
         let menuAcrescentar = document.getElementById('menu_02')
+        
         elementos.forEach(menuAdd => {
-            console.log(menuAdd)
             menuAcrescentar.innerHTML += '<li><a href="#">' + menuAdd + '</a></li>'
 
         })
